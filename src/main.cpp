@@ -1,22 +1,21 @@
 #include <iostream>
+#include <functional>
 
-int main() {
-    int begin = 0;
-    int end = 10;
-
+void loop(int i, int j, int k, std::function<void(int)> pred) {
     START:
-        if(begin < end) {
-            std::cout << begin << " ";
-            begin = begin + 1;
+        if(i < j) {
+            pred(i);
+            i = i + k;
             goto START;
         }
+}
 
-        /*
-        while(begin < end) {
-            std::cout << begin << " ";
-            begin = begin + 1;
-        }
-        */
+void pred(int x) {
+    std::cout << x << " ";
+}
+
+int main() {
+    loop(0, 10, 1, pred);
 
     return 0;
 }
