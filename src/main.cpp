@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int begin = 00;
+    int begin = 0;
     int end = 10;
 
     START:
@@ -10,6 +10,13 @@ int main() {
             begin = begin + 1;
             goto START;
         }
+
+        /*
+        while(begin < end) {
+            std::cout << begin << " ";
+            begin = begin + 1;
+        }
+        */
 
     return 0;
 }
