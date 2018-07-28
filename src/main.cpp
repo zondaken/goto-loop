@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include "../core/loop.h"
 
 void pred(int x) {
