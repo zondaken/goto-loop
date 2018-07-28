@@ -2,6 +2,23 @@
 
 #include <functional>
 
+void while_loop_classic(std::function<bool()> cond, std::function<void()> pred) {
+    START:
+        if(cond()) {
+            pred();
+            goto START;
+        }
+}
+
+void do_while_loop_classic(std::function<bool()> cond, std::function<void()> pred) {
+    START:
+        pred();
+
+        if(cond()) {
+            goto START;
+        }
+}
+
 void while_loop(int i, int j, int k, bool check_eq, std::function<void(int)> pred) {
     if(check_eq) {
         if(i < j) {
